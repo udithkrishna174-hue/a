@@ -1,0 +1,19 @@
+name: artifact demo
+
+on: push
+
+jobs:
+   bild:
+     runs-on: ubuntu-latest
+
+    steps:
+      - name:create file
+        num: |
+         mkdir temp
+        echo "alpa">temp/alpa.html
+
+      - name:upload artifact
+         uses: actions/upload-artifact@v4
+         with:
+            name: files
+            path: temp/
